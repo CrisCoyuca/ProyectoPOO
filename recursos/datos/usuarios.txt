@@ -1,0 +1,4 @@
+adminsergio~Sergio#2026~ADMIN
+admincristis~Cristis#2026~ADMIN
+admintelles~Telles#2026~ADMIN
+USUARIOS~Usuarios#2026~NORMAL
