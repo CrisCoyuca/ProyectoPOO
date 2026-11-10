@@ -18,7 +18,7 @@ public class Detalle_Receta extends JFrame {
     JLabel nombre, info, clave, foto, lingredientes, lpreparacion;
     JTextArea tingredientes, tpreparacion;
     JScrollPane scrollIngredientes, scrollPreparacion;
-    JButton imprimir, descargar;
+    JButton descargar;
 
     Receta_Datos receta;
 
@@ -26,7 +26,7 @@ public class Detalle_Receta extends JFrame {
     public Detalle_Receta(Receta_Datos receta){
         this.receta = receta;
         setTitle("Detalle de la receta");
-        setSize(780, 620);
+        setSize(757, 550);
         setLayout(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -36,19 +36,19 @@ public class Detalle_Receta extends JFrame {
 
     //Creación de objetos
     public void componentes(){
-        nombre = new JLabel(receta.getNombre());
+        nombre = new JLabel(receta.getNombre(), SwingConstants.CENTER);
         nombre.setFont(new Font("SansSerif", Font.BOLD, 20));
-        nombre.setBounds(30, 20, 700, 30);
+        nombre.setBounds(0, 15, 741, 30);
 
         info = new JLabel(receta.getCategoria() + "   |   " + receta.getTiempoCoccion()
-                + " min   |   " + receta.getPorciones() + " porciones");
-        info.setBounds(30, 60, 500, 24);
+                + " min   |   " + receta.getPorciones() + " porciones", SwingConstants.RIGHT);
+        info.setBounds(500, 65, 220, 22);
 
         clave = new JLabel("Clave: " + receta.getClave());
-        clave.setBounds(30, 84, 300, 24);
+        clave.setBounds(430, 65, 70, 22);
 
         foto = new JLabel("Sin imagen", SwingConstants.CENTER);
-        foto.setBounds(30, 125, 290, 230);
+        foto.setBounds(430, 90, 290, 230);
         foto.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         String rutaImagen = receta.getRutaImagen();
         if(rutaImagen != null && !rutaImagen.isEmpty() && new File(rutaImagen).exists()){
@@ -59,35 +59,27 @@ public class Detalle_Receta extends JFrame {
         }
 
         lingredientes = new JLabel("Ingredientes:");
-        lingredientes.setBounds(350, 125, 200, 22);
+        lingredientes.setBounds(30, 65, 200, 22);
 
         tingredientes = new JTextArea(receta.getIngredientes());
         tingredientes.setEditable(false);
         tingredientes.setLineWrap(true);
         tingredientes.setWrapStyleWord(true);
         scrollIngredientes = new JScrollPane(tingredientes);
-        scrollIngredientes.setBounds(350, 150, 370, 170);
+        scrollIngredientes.setBounds(30, 90, 370, 170);
 
         lpreparacion = new JLabel("Modo de preparacion:");
-        lpreparacion.setBounds(350, 332, 250, 22);
+        lpreparacion.setBounds(30, 272, 250, 22);
 
         tpreparacion = new JTextArea(receta.getPreparacion());
         tpreparacion.setEditable(false);
         tpreparacion.setLineWrap(true);
         tpreparacion.setWrapStyleWord(true);
         scrollPreparacion = new JScrollPane(tpreparacion);
-        scrollPreparacion.setBounds(350, 357, 370, 190);
-
-        imprimir = new JButton("Imprimir");
-        imprimir.setBounds(30, 375, 140, 34);
-        imprimir.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                imprimirReceta();
-            }
-        });
+        scrollPreparacion.setBounds(30, 297, 370, 190);
 
         descargar = new JButton("Descargar PDF");
-        descargar.setBounds(180, 375, 140, 34);
+        descargar.setBounds(505, 335, 140, 34);
         descargar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 descargarPdf();
@@ -103,7 +95,6 @@ public class Detalle_Receta extends JFrame {
         add(scrollIngredientes);
         add(lpreparacion);
         add(scrollPreparacion);
-        add(imprimir);
         add(descargar);
     }
 

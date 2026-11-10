@@ -18,7 +18,7 @@ public class Eliminar_Receta extends JFrame {
     //Propiedades de la ventana
     public Eliminar_Receta(){
         setTitle("Eliminar receta");
-        setSize(480, 320);
+        setSize(470, 300);
         setLayout(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -30,7 +30,7 @@ public class Eliminar_Receta extends JFrame {
     public void componentes(){
         titulo = new JLabel("Eliminar receta");
         titulo.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 18));
-        titulo.setBounds(40, 25, 300, 30);
+        titulo.setBounds(160, 25, 300, 30);
 
         lclave = new JLabel("Clave de la receta:");
         lclave.setBounds(40, 85, 250, 22);

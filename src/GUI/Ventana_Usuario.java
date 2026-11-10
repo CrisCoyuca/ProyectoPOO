@@ -24,7 +24,7 @@ public class Ventana_Usuario extends JFrame {
     //Propiedades de la ventana
     public Ventana_Usuario(){
         setTitle("Recetario - Catalogo");
-        setSize(770, 600);
+        setSize(570, 550);
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -37,13 +37,13 @@ public class Ventana_Usuario extends JFrame {
     public void componentes(){
         titulo = new JLabel("Catalogo de recetas");
         titulo.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 20));
-        titulo.setBounds(30, 25, 400, 30);
+        titulo.setBounds(182, 20, 250, 30);
 
         lcategoria = new JLabel("Categoria:");
-        lcategoria.setBounds(30, 80, 100, 25);
+        lcategoria.setBounds(127, 70, 70, 25);
 
         ccategoria = new JComboBox<>(Categorias_Comida.LISTA);
-        ccategoria.setBounds(135, 80, 230, 28);
+        ccategoria.setBounds(197, 70, 230, 28);
         ccategoria.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 cargarCategoria();
@@ -53,10 +53,10 @@ public class Ventana_Usuario extends JFrame {
         modeloLista = new DefaultListModel<>();
         listaRecetas = new JList<>(modeloLista);
         scrollLista = new JScrollPane(listaRecetas);
-        scrollLista.setBounds(30, 125, 570, 380);
+        scrollLista.setBounds(52, 115, 450, 300);
 
         verReceta = new JButton("Ver receta");
-        verReceta.setBounds(620, 125, 120, 32);
+        verReceta.setBounds(147, 435, 120, 32);
         verReceta.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 verRecetaSeleccionada();
@@ -64,7 +64,7 @@ public class Ventana_Usuario extends JFrame {
         });
 
         cerrarSesion = new JButton("Cerrar sesion");
-        cerrarSesion.setBounds(620, 170, 120, 32);
+        cerrarSesion.setBounds(287, 435, 120, 32);
         cerrarSesion.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 Sesion_Control.cerrarSesion();

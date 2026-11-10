@@ -28,7 +28,7 @@ public class Consultar_Receta extends JFrame {
     public void componentes(){
         titulo = new JLabel("Consultar receta");
         titulo.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 18));
-        titulo.setBounds(40, 25, 300, 30);
+        titulo.setBounds(160, 25, 300, 30);
 
         lclave = new JLabel("Clave de la receta:");
         lclave.setBounds(40, 85, 250, 22);

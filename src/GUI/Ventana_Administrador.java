@@ -19,7 +19,7 @@ public class Ventana_Administrador extends JFrame {
     //Propiedades de la ventana
     public Ventana_Administrador(){
         setTitle("Recetario - Administrador");
-        setSize(760, 540);
+        setSize(350, 200);
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -31,11 +31,13 @@ public class Ventana_Administrador extends JFrame {
     public void componentes(){
         titulo = new JLabel("Panel de administrador");
         titulo.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 22));
-        titulo.setBounds(40, 40, 400, 30);
+        titulo.setBounds(0, 35, 344, 30);
+        titulo.setHorizontalAlignment(SwingConstants.CENTER);
         add(titulo);
 
         info = new JLabel("Recetas registradas: " + Receta_Control.recetas.size());
-        info.setBounds(40, 90, 300, 30);
+        info.setBounds(0, 85, 344, 30);
+        info.setHorizontalAlignment(SwingConstants.CENTER);
         add(info);
 
         //Menu Archivo
@@ -78,6 +80,7 @@ public class Ventana_Administrador extends JFrame {
 
         //Menu Salir
         salir = new JMenuItem("Cerrar sesion");
+        salir.setMaximumSize(salir.getPreferredSize());
         salir.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 int opcion = JOptionPane.showConfirmDialog(
